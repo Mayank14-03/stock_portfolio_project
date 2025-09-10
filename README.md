@@ -48,7 +48,7 @@ A Django-based web application to track your stock portfolio with real-time pric
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Mayank14-03/stock_portfolio_tracker_project.git
+(https://github.com/Mayank14-03/stock_portfolio_tracker_project.git)
 Go into the project folder:
 
 bash
