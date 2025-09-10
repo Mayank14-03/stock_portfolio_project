@@ -1,0 +1,25 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Holding - Stock Portfolio</title>
+<link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+</head>
+<body>
+<div class="holding-form">
+    <h1>Delete Holding</h1>
+    <p>Are you sure you want to delete <strong>{{ holding.stock_symbol }}</strong>?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-action" style="background-color: #dc3545;">Delete</button>
+        <a href="{% url 'portfolio:dashboard' %}" class="btn-action">Cancel</a>
+    </form>
+</div>
+</body>
+</html>
+

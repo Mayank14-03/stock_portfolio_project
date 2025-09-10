@@ -1,0 +1,15 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Create Account</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-submit">Register</button>
+    </form>
+    <p class="form-footer">Already have an account? <a href="{% url 'portfolio:login' %}">Login</a></p>
+</div>
+{% endblock %}
+

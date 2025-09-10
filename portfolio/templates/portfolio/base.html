@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Stock Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>📈 Stock Portfolio</h2>
+        <div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'portfolio:dashboard' %}">Dashboard</a>
+                <a href="{% url 'portfolio:add_holding' %}">Add Holding</a>
+                <form action="{% url 'portfolio:logout' %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'portfolio:login' %}">Login</a>
+                <a href="{% url 'portfolio:register' %}">Register</a>
+            {% endif %}
+            <!-- 🔘 Theme Toggle -->
+            <button class="btn-toggle" onclick="toggleTheme()">Toggle Theme</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Dark/Light Mode Script -->
+    <script>
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute("data-theme");
+        const newTheme = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    }
+
+    // Load saved theme on page load
+    (function() {
+        const saved = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", saved);
+    })();
+    </script>
+</body>
+</html>
+

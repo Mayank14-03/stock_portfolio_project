@@ -1,0 +1,37 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Login</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-submit">Login</button>
+    </form>
+
+    <p class="extra-links">
+        <a href="{% url 'portfolio:password_reset' %}">Forgot your password?</a>
+    </p>
+
+    <p class="form-footer">
+        Don’t have an account? <a href="{% url 'portfolio:register' %}">Register</a>
+    </p>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
