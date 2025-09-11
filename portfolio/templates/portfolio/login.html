@@ -1,7 +1,6 @@
+{% extends 'portfolio/base.html' %}  <!-- MUST be first -->
+{% load static %}
 
-
-{% extends 'portfolio/base.html' %}
-{% load static %}  
 {% block title %}Login{% endblock %}
 
 {% block content %}
@@ -18,7 +17,7 @@
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn-submit">Login</button>
+            <button type="submit" class="btn-login">Login</button>
         </form>
 
         <p class="extra-links">

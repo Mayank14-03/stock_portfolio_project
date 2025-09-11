@@ -88,7 +88,6 @@ body, html {
     margin-bottom: 25px;
     flex-wrap: wrap;
 }
-
 .btn-action {
     background: #4CAF50;
     color: white;
@@ -105,9 +104,7 @@ body, html {
 .btn-action.logout {
     background: var(--loss);
 }
-.btn-action.logout:hover {
-    background: #c62828;
-}
+.btn-action.logout:hover { background: #c62828; }
 
 /* ========= Cards ========= */
 .cards-container {
@@ -144,7 +141,6 @@ body, html {
     margin-bottom: 30px;
 }
 .table-container { overflow-x: auto; }
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -168,37 +164,47 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 .form-container {
     max-width: 400px;
     margin: 40px auto;
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.92);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    border: 2px solid #1a237e;
 }
 .form-container input, select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #999;
     border-radius: 6px;
     background: transparent;
     color: var(--text-color);
     margin: 8px 0;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
-input:focus, select:focus {
+.form-container input:focus, select:focus {
     border-color: var(--primary);
     outline: none;
+    box-shadow: 0 0 8px rgba(26,35,126,0.4);
 }
-.btn-submit {
+
+/* HD Gradient Button for Forms */
+.btn-login, .btn-submit {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: center;
-    background: var(--primary);
+    border-radius: 8px;
+    background: linear-gradient(45deg, #1a237e, #3949ab);
     color: white;
-    font-weight: 500;
-    transition: background 0.3s;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
 }
-.btn-submit:hover { background: var(--primary-hover); }
+.btn-login:hover, .btn-submit:hover {
+    background: linear-gradient(45deg, #3949ab, #1a237e);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
 
 /* ========= Chart ========= */
 .chart-card img {
@@ -254,7 +260,7 @@ input:focus, select:focus {
 @media (max-width: 768px) {
     .card .value { font-size: 1.2rem; }
     th, td { padding: 6px; font-size: 0.85rem; }
-    .form-container { padding: 20px; margin: 20px; }
+    .form-container { padding: 25px; margin: 20px; }
 }
 
 @media (max-width: 480px) {
@@ -263,6 +269,8 @@ input:focus, select:focus {
     .navbar { flex-direction: column; align-items: flex-start; gap: 10px; }
     .dashboard-header h1 { font-size: 1.3rem; }
     .dashboard-header p { font-size: 0.9rem; }
+    .form-container { padding: 20px; margin: 15px; }
+    .form-container h2 { font-size: 1.5rem; }
 }
 
 /* ===== Login Page Background ===== */
@@ -272,37 +280,6 @@ input:focus, select:focus {
     justify-content: center;
     align-items: center;
     background: url("../images/login-bg.jpg") no-repeat center center/cover;
-}
-
-/* Centered Form Box */
-.form-container {
-    background: rgba(255, 255, 255, 0.92); /* slightly transparent */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-/* ===== Login Page Form ===== */
-.form-container {
-    background: rgba(255, 255, 255, 0.92); /* slightly transparent */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-    .form-container { padding: 25px; margin: 20px; }
-}
-@media (max-width: 480px) {
-    .form-container { padding: 20px; margin: 15px; }
-    .form-container h2 { font-size: 1.5rem; }
 }
 
 
