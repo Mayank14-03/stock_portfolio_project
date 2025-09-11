@@ -182,7 +182,7 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     background: transparent;
     color: var(--text-color);
     margin: 8px 0;
-    text-align: center;
+    text-align: left; /* cursor starts from left now */
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 .form-container input:focus, select:focus {
@@ -285,7 +285,6 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     align-items: center;
     background: url("../images/login-bg.jpg") no-repeat center center/cover;
 }
-
 
 
 
