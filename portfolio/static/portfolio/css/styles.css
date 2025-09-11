@@ -173,6 +173,7 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     display: flex;
     flex-direction: column;
     gap: 15px;
+    box-sizing: border-box;
 }
 .form-container input, select {
     width: 100%;
@@ -182,7 +183,9 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     background: transparent;
     color: var(--text-color);
     margin: 8px 0;
-    text-align: left; /* cursor starts from left now */
+    text-align: left; /* cursor starts from left */
+    font-size: 1rem;
+    box-sizing: border-box;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 .form-container input:focus, select:focus {
@@ -191,23 +194,24 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     box-shadow: 0 0 8px rgba(26,35,126,0.4);
 }
 
-/* HD Gradient Button for Forms */
+/* Submit Button */
 .btn-login, .btn-submit {
     width: 100%;
     padding: 12px;
-    border: none;
     border-radius: 8px;
     background: linear-gradient(45deg, #1a237e, #3949ab);
     color: white;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
-    transition: 0.3s;
+    border: none;
     margin-top: 15px;
+    transition: 0.3s;
 }
 .btn-login:hover, .btn-submit:hover {
     background: linear-gradient(45deg, #3949ab, #1a237e);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transform: scale(1.02);
 }
 
 /* ========= Chart ========= */
@@ -260,13 +264,11 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     .dashboard-actions { flex-direction: column; gap: 10px; }
     .btn-action, .btn-submit { width: 100%; }
 }
-
 @media (max-width: 768px) {
     .card .value { font-size: 1.2rem; }
     th, td { padding: 6px; font-size: 0.85rem; }
     .form-container { padding: 25px; margin: 20px; }
 }
-
 @media (max-width: 480px) {
     .card .value { font-size: 1rem; }
     th, td { padding: 5px; font-size: 0.75rem; }
@@ -285,6 +287,4 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     align-items: center;
     background: url("../images/login-bg.jpg") no-repeat center center/cover;
 }
-
-
 
