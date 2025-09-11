@@ -166,28 +166,45 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 .action-link:hover { text-decoration: underline; }
 .action-link.delete { color: var(--loss); }
 
-/* ========= Forms ========= */
+/* ========= Auth & Form Pages ========= */
+.login-page,
+.register-page,
+.add-holding-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.login-page { background-image: url("../images/login-bg.jpg"); }
+.register-page { background-image: url("../images/register-bg.jpg"); }
+.add-holding-page { background-image: url("../images/add-holding-bg.jpg"); }
+
 .form-container {
     max-width: 400px;
-    margin: 40px auto;
-    background: rgba(255, 255, 255, 0.95); /* light background */
+    width: 100%;
     padding: 35px;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     text-align: center;
-    border: 2px solid var(--primary);
     display: flex;
     flex-direction: column;
     gap: 15px;
-    color: #333; /* force readable dark text for light theme */
+    border: 2px solid var(--primary);
+    background: rgba(255,255,255,0.95);
+    color: var(--text-color);
     transition: color 0.3s, background 0.3s;
 }
-
 [data-theme="dark"] .form-container {
-    background: rgba(30, 30, 30, 0.95); /* dark background */
-    color: #e0e0e0; /* readable light text for dark theme */
+    background: rgba(30,30,30,0.95);
+    color: #e0e0e0;
 }
-
+.form-container h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
 .form-container input,
 .form-container select,
 .form-container textarea {
@@ -196,22 +213,19 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     border: 1px solid #999;
     border-radius: 6px;
     background: transparent;
-    color: inherit; /* inherit from .form-container for both themes */
+    color: inherit;
     margin: 8px 0;
     font-size: 1rem;
     transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
-
 .form-container input::placeholder,
 .form-container textarea::placeholder {
-    color: rgba(51, 51, 51, 0.5); /* light theme placeholder */
+    color: rgba(51, 51, 51, 0.5);
 }
-
 [data-theme="dark"] .form-container input::placeholder,
 [data-theme="dark"] .form-container textarea::placeholder {
-    color: rgba(224, 224, 224, 0.5); /* dark theme placeholder */
+    color: rgba(224,224,224,0.5);
 }
-
 .form-container input:focus,
 .form-container select:focus,
 .form-container textarea:focus {
@@ -219,6 +233,8 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     outline: none;
     box-shadow: 0 0 8px rgba(26,35,126,0.4);
 }
+
+/* ========= Buttons ========= */
 .btn-login,
 .btn-submit,
 .btn-action {
@@ -246,15 +262,6 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 }
 .form-container a:hover {
     text-decoration: underline;
-}
-
-/* ========= Chart ========= */
-.chart-card img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px auto 0;
-    display: block;
-    border-radius: 6px;
 }
 
 /* ========= Messages ========= */
@@ -292,6 +299,15 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 }
 .extra-links a:hover { text-decoration: underline; }
 
+/* ========= Chart ========= */
+.chart-card img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto 0;
+    display: block;
+    border-radius: 6px;
+}
+
 /* ========= Responsive ========= */
 @media (max-width: 992px) {
     .cards-container { flex-direction: column; gap: 15px; }
@@ -311,37 +327,4 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     .dashboard-header p { font-size: 0.9rem; }
     .form-container { padding: 20px; margin: 15px; }
     .form-container h2 { font-size: 1.5rem; }
-}
-
-/* ========= Page Backgrounds ========= */
-.login-page,
-.register-page,
-.add-holding-page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.login-page { background-image: url("../images/login-bg.jpg"); }
-.register-page { background-image: url("../images/register-bg.jpg"); }
-.add-holding-page { background-image: url("../images/add-holding-bg.jpg"); }
-
-/* Add Holding specific form (matches login/register) */
-.add-holding-page .form-container {
-    max-width: 400px;
-    width: 100%;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border: 2px solid var(--primary);
-    background: rgba(255,255,255,0.95);
-    color: var(--text-color);
-    transition: color 0.3s, background 0.3s;
 }

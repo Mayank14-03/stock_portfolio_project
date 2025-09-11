@@ -1,8 +1,10 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
+
 {% block title %}Add Holding{% endblock %}
 
 {% block content %}
-<div class="add-holding-page">
+<div class="form-page" style="background-image: url('{% static 'portfolio/images/add-holding-bg.jpg' %}');">
     <div class="form-container">
         <h2>Add Holding</h2>
 
@@ -16,7 +18,7 @@
         {% endif %}
 
         <!-- Add Holding Form -->
-        <form method="post" action="{% url 'portfolio:add_holding' %}">
+        <form method="post" action="{% url 'portfolio:add_holding' %}" class="styled-form">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn-submit">Add Holding</button>
@@ -24,7 +26,6 @@
     </div>
 </div>
 {% endblock %}
-
 
 
 
