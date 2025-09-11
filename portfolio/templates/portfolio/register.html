@@ -1,15 +1,28 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
+
 {% block title %}Register{% endblock %}
 
 {% block content %}
-<div class="form-container">
-    <h2>Create Account</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn-submit">Register</button>
-    </form>
-    <p class="form-footer">Already have an account? <a href="{% url 'portfolio:login' %}">Login</a></p>
+<div class="register-page" style="
+    background: url('{% static 'portfolio/images/register-bg.jpg' %}') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+">
+    <div class="form-container">
+        <h2>Create Account</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+
+        <p class="extra-links">
+            Already have an account? <a href="{% url 'portfolio:login' %}">Login</a>
+        </p>
+    </div>
 </div>
 {% endblock %}
 

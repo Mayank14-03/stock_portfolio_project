@@ -288,3 +288,11 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     background: url("../images/login-bg.jpg") no-repeat center center/cover;
 }
 
+/* ===== Register Page Background ===== */
+.register-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../images/register-bg.jpg") no-repeat center center/cover;
+}
