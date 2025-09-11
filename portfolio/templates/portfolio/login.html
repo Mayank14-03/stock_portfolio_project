@@ -4,20 +4,14 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<div class="login-page" style="
-    background: url('{% static 'portfolio/images/login-bg.jpg' %}') no-repeat center center/cover;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-">
+<div class="login-page">
     <div class="form-container">
         <h2>Login</h2>
 
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn-login">Login</button>
+            <button type="submit" class="btn-submit">Submit</button>
         </form>
 
         <p class="extra-links">
