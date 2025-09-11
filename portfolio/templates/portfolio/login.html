@@ -1,8 +1,16 @@
+{% load static %}  <!-- Load static files at the top -->
+
 {% extends 'portfolio/base.html' %}
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<div class="login-page">
+<div class="login-page" style="
+    background: url('{% static 'portfolio/images/login-bg.jpg' %}') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+">
     <div class="form-container">
         <h2>Login</h2>
 
