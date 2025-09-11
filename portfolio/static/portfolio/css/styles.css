@@ -1,4 +1,10 @@
 /* ========= Base Styles ========= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* ensures padding/margin don't break layouts */
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -164,18 +170,18 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 .form-container {
     max-width: 400px;
     margin: 40px auto;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--card-bg);
     padding: 35px;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     text-align: center;
-    border: 2px solid #1a237e;
+    border: 2px solid var(--primary);
     display: flex;
     flex-direction: column;
     gap: 15px;
-    box-sizing: border-box;
+    color: var(--text-color);
 }
-.form-container input, select {
+.form-container input, select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #999;
@@ -183,23 +189,24 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     background: transparent;
     color: var(--text-color);
     margin: 8px 0;
-    text-align: left; /* cursor starts from left */
+    text-align: left;
     font-size: 1rem;
-    box-sizing: border-box;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
-.form-container input:focus, select:focus {
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+}
+.form-container input:focus, select:focus, textarea:focus {
     border-color: var(--primary);
     outline: none;
     box-shadow: 0 0 8px rgba(26,35,126,0.4);
 }
-
-/* Submit Button */
 .btn-login, .btn-submit {
     width: 100%;
     padding: 12px;
     border-radius: 8px;
-    background: linear-gradient(45deg, #1a237e, #3949ab);
+    background: linear-gradient(45deg, var(--primary), #3949ab);
     color: white;
     font-weight: bold;
     font-size: 1rem;
@@ -209,9 +216,15 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     transition: 0.3s;
 }
 .btn-login:hover, .btn-submit:hover {
-    background: linear-gradient(45deg, #3949ab, #1a237e);
+    background: linear-gradient(45deg, #3949ab, var(--primary));
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     transform: scale(1.02);
+}
+.form-container a {
+    color: var(--primary);
+}
+.form-container a:hover {
+    text-decoration: underline;
 }
 
 /* ========= Chart ========= */
