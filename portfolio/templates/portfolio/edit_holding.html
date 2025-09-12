@@ -1,16 +1,32 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
+
 {% block title %}Edit Holding{% endblock %}
+{% block body_class %}edit-holding-page{% endblock %}
 
 {% block content %}
-<!-- Full-page flex wrapper for perfect centering -->
-<div class="edit-holding-page"> 
-    <div class="form-container">
-        <h2>Edit Holding</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn-submit">Save Changes</button>
-        </form>
+<div class="form-container" role="main" aria-labelledby="editHoldingHeading">
+  <h2 id="editHoldingHeading">Edit Holding</h2>
+
+  {% if messages %}
+    <div class="messages" aria-live="polite">
+      {% for message in messages %}
+        <p class="message {{ message.tags }}">{{ message }}</p>
+      {% endfor %}
     </div>
+  {% endif %}
+
+  <form method="post" class="styled-form" novalidate>
+    {% csrf_token %}
+    <div class="form-fields">
+      {{ form.as_p }}
+    </div>
+
+    <button type="submit" class="btn-submit">Save Changes</button>
+  </form>
+
+  <div class="extra-links">
+    <a href="{% url 'portfolio:dashboard' %}">← Back to dashboard</a>
+  </div>
 </div>
 {% endblock %}

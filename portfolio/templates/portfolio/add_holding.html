@@ -1,12 +1,12 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
 
-{% block title %}Edit Holding{% endblock %}
+{% block title %}Add Holding{% endblock %}
 
 {% block content %}
-<div class="edit-holding-page">
-  <div class="form-container" role="main" aria-labelledby="editHoldingHeading">
-    <h2 id="editHoldingHeading">Edit Holding</h2>
+<div class="add-holding-page">
+  <div class="form-container" role="main" aria-labelledby="addHoldingHeading">
+    <h2 id="addHoldingHeading">Add Holding</h2>
 
     {% if messages %}
       <div class="messages" aria-live="polite">
@@ -16,13 +16,13 @@
       </div>
     {% endif %}
 
-    <form method="post" action="" class="styled-form" novalidate>
+    <form method="post" action="{% url 'portfolio:add_holding' %}" class="styled-form" novalidate>
       {% csrf_token %}
       <div class="form-fields">
         {{ form.as_p }}
       </div>
 
-      <button type="submit" class="btn-submit">Save Changes</button>
+      <button type="submit" class="btn-submit">Add Holding</button>
     </form>
 
     <div class="extra-links">

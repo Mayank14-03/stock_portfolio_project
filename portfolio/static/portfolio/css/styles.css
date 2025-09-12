@@ -342,3 +342,17 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     .form-container { padding: 20px; margin: 15px; }
     .form-container h2 { font-size: 1.5rem; }
 }
+
+/* Strong centering for Edit Holding page */
+body.edit-holding-page {
+    min-height: 100vh;           /* full viewport height */
+    display: flex !important;    /* force flexbox */
+    justify-content: center !important; /* horizontal center */
+    align-items: center !important;     /* vertical center */
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* optional background-image: url("../images/edit-holding-bg.jpg"); */
+}
