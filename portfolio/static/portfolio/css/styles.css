@@ -185,15 +185,11 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 
 /* ========= Edit Holding Page ========= */
 .edit-holding-page {
-    min-height: 100vh;               /* full height of viewport */
-    display: flex;                   /* enable flexbox */
-    justify-content: center;         /* horizontal centering */
-    align-items: center;             /* vertical centering */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* optional background image if you want same look as login/register */
-    /* background-image: url("../images/edit-holding-bg.jpg"); */
+    /* optional background image:
+       background-image: url("../images/edit-holding-bg.jpg"); */
 }
 
 .form-container {
@@ -343,16 +339,24 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     .form-container h2 { font-size: 1.5rem; }
 }
 
-/* Strong centering for Edit Holding page */
+/* ========= Edit holding page layout =========
+   Keep navbar at the top and center the form
+   inside <main>. */
 body.edit-holding-page {
-    min-height: 100vh;           /* full viewport height */
-    display: flex !important;    /* force flexbox */
-    justify-content: center !important; /* horizontal center */
-    align-items: center !important;     /* vertical center */
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* optional background-image: url("../images/edit-holding-bg.jpg"); */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* navbar on top, main below */
+  margin: 0;
+  background-image: url("../images/edit-holding-bg.jpg");
+  background-size: cover;        /* full screen cover */
+  background-position: center;   /* keep it centered */
+  background-repeat: no-repeat;  /* no tiling */
 }
+body.edit-holding-page main {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  width: 100%;
+}
+nav.navbar { width: 100%; box-sizing: border-box; }

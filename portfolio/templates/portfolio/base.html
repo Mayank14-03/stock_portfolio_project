@@ -2,19 +2,45 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Stock Portfolio{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}" />
 
+    <!-- Page-specific layout fixes -->
     <style>
-        /* Ensure the main wrapper spans full width */
-        main {
-            width: 100%;
-        }
+      /* make main span full width by default */
+      main { width: 100%; }
+
+      /*
+       When the body has the class "edit-holding-page":
+         • Navbar stays at the top
+         • The content inside <main> is centered both horizontally & vertically
+      */
+      body.edit-holding-page {
+        min-height: 100vh;
+        display: flex;            /* flex container */
+        flex-direction: column;   /* navbar on top, main below */
+        margin: 0;
+      }
+
+      body.edit-holding-page main {
+        flex: 1;                  /* occupy remaining height below navbar */
+        display: flex;            /* center child */
+        justify-content: center;  /* horizontal center */
+        align-items: center;      /* vertical center */
+        width: 100%;
+      }
+
+      /* Ensure navbar always stretches full width */
+      nav.navbar {
+        width: 100%;
+        box-sizing: border-box;
+      }
     </style>
 </head>
-<body>
+
+<body class="{% block body_class %}{% endblock %}">
     <!-- Navbar -->
     <nav class="navbar">
         <h2>📈 Stock Portfolio</h2>
@@ -43,18 +69,18 @@
 
     <!-- Dark/Light Mode Script -->
     <script>
-    function toggleTheme() {
-        const current = document.documentElement.getAttribute("data-theme");
-        const newTheme = current === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-    }
+      function toggleTheme() {
+          const current = document.documentElement.getAttribute("data-theme");
+          const newTheme = current === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+      }
 
-    // Load saved theme on page load
-    (function() {
-        const saved = localStorage.getItem("theme") || "light";
-        document.documentElement.setAttribute("data-theme", saved);
-    })();
+      // Load saved theme on page load
+      (function() {
+          const saved = localStorage.getItem("theme") || "light";
+          document.documentElement.setAttribute("data-theme", saved);
+      })();
     </script>
 </body>
 </html>
