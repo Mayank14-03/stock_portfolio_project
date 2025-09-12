@@ -308,6 +308,18 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     border-radius: 6px;
 }
 
+/* ========= Edit Holding Page Centering ========= */
+.center-wrapper {
+    min-height: calc(100vh - 70px); /* subtract navbar height if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.center-wrapper .form-container {
+    margin: 0; /* remove any default margin for perfect centering */
+}
+
 /* ========= Responsive ========= */
 @media (max-width: 992px) {
     .cards-container { flex-direction: column; gap: 15px; }

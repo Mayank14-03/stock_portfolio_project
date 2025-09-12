@@ -2,12 +2,15 @@
 {% block title %}Edit Holding{% endblock %}
 
 {% block content %}
-<div class="form-container">
-    <h2>Edit Holding</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn-submit">Save Changes</button>
-    </form>
+<!-- Full-page flex wrapper for perfect centering -->
+<div class="center-wrapper">
+    <div class="form-container">
+        <h2>Edit Holding</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-submit">Save Changes</button>
+        </form>
+    </div>
 </div>
 {% endblock %}
