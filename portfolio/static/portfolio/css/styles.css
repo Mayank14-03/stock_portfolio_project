@@ -169,7 +169,8 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 /* ========= Auth & Form Pages ========= */
 .login-page,
 .register-page,
-.add-holding-page {
+.add-holding-page,
+.edit-holding-page { /* ✅ Added edit-holding-page */
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -178,9 +179,12 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     background-position: center;
     background-repeat: no-repeat;
 }
-.login-page { background-image: url("../images/login-bg.jpg"); }
-.register-page { background-image: url("../images/register-bg.jpg"); }
+
+.login-page       { background-image: url("../images/login-bg.jpg"); }
+.register-page    { background-image: url("../images/register-bg.jpg"); }
 .add-holding-page { background-image: url("../images/add-holding-bg.jpg"); }
+/* ✅ Set your own image for edit page: */
+.edit-holding-page { background-image: url("../images/edit-holding-bg.jpg"); }
 
 .form-container {
     max-width: 400px;
@@ -306,18 +310,6 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     margin: 10px auto 0;
     display: block;
     border-radius: 6px;
-}
-
-/* ========= Edit Holding Page Centering ========= */
-.center-wrapper {
-    min-height: calc(100vh - 70px); /* subtract navbar height if needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-.center-wrapper .form-container {
-    margin: 0; /* remove any default margin for perfect centering */
 }
 
 /* ========= Responsive ========= */
