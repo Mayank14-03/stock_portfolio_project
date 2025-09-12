@@ -169,8 +169,7 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 /* ========= Auth & Form Pages ========= */
 .login-page,
 .register-page,
-.add-holding-page,
-.edit-holding-page { /* ✅ Added edit-holding-page */
+.add-holding-page {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -183,8 +182,19 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 .login-page       { background-image: url("../images/login-bg.jpg"); }
 .register-page    { background-image: url("../images/register-bg.jpg"); }
 .add-holding-page { background-image: url("../images/add-holding-bg.jpg"); }
-/* ✅ Set your own image for edit page: */
-.edit-holding-page { background-image: url("../images/edit-holding-bg.jpg"); }
+
+/* ========= Edit Holding Page ========= */
+.edit-holding-page {
+    min-height: 100vh;               /* full height of viewport */
+    display: flex;                   /* enable flexbox */
+    justify-content: center;         /* horizontal centering */
+    align-items: center;             /* vertical centering */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* optional background image if you want same look as login/register */
+    /* background-image: url("../images/edit-holding-bg.jpg"); */
+}
 
 .form-container {
     max-width: 400px;
