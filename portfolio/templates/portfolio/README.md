@@ -1,25 +1,37 @@
-# Stock Portfolio Tracker
+# 📊 Stock Portfolio Tracker
 
-A Django web application to **track stock holdings, calculate returns, and manage portfolio performance**. This project allows users to add, update, and delete stock holdings, view current stock prices, and analyze their investment portfolio.
-
----
-
-## Features
-
-- Add, update, and delete stock holdings.
-- Validate stock symbols automatically.
-- Calculate profit/loss for each stock and total portfolio.
-- Display current stock prices and portfolio performance.
-- User-friendly dashboard to manage investments.
-- Built using Django and Python.
+A Django web application to **track stock holdings, calculate returns, and manage portfolio performance**.  
+Easily add, update, and delete stock holdings, view live stock prices, and analyze your investments.
 
 ---
 
-## Installation
+## ✨ Features
+
+- ➕ Add, ✏️ update, and ❌ delete stock holdings  
+- 🔍 Validate stock symbols automatically  
+- 📈 Calculate profit/loss for each stock and total portfolio  
+- 💹 View current stock prices and portfolio performance  
+- 🖥️ User-friendly dashboard to manage investments  
+- ⚡ Built using Django, Python, and yfinance  
+
+---
+
+## 🚀 Demo (Screenshots)
+
+| Dashboard | Add Holding Page |
+|-----------|------------------|
+| ![Dashboard Screenshot](screenshots/dashboard.png) | ![Add Stock Screenshot](screenshots/add_stock.png) |
+
+*(Add your screenshots inside a `screenshots/` folder and update the image paths)*
+
+---
+
+## ⚙️ Installation
 
 1. **Clone the repository**
 ```bash
 git clone https://github.com/Mayank14-03/stock_portfolio_project.git
+
 
 2.Navigate to project folder
 
@@ -53,18 +65,19 @@ python manage.py runserver
 7.Open your browser at: 
   http://127.0.0.1:8000/
 
-Usage:
 
-Add a stock to your portfolio using the “Add Holding” form.
+📌 Usage
 
-Update or delete stocks from the dashboard.
+Add a stock to your portfolio using the “Add Holding” form
 
-View your current portfolio performance, including total returns and profit/loss.
+Update or delete stocks directly from the dashboard
 
-⚠️ Note: Use valid stock symbols (e.g., Apple = AAPL). Invalid symbols will be rejected.
+View your portfolio performance, profit/loss, and returns
+
+⚠️ Use valid stock symbols (e.g., Apple = AAPL). Invalid symbols will be rejected
 
 
-Technologies Used:
+🛠️ Technologies Used
 
 Python 3.x
 
@@ -74,18 +87,19 @@ HTML, CSS, Bootstrap
 
 yfinance (for fetching stock data)
 
-Future Improvements
 
-Add user authentication (login/register).
+🌟 Future Improvements
 
-Support for multiple portfolios per user.
+🔑 User authentication (login/register)
 
-Interactive charts for portfolio performance.
+📊 Interactive charts for portfolio performance
 
-Auto-suggestions for stock symbols.
+🧾 Multiple portfolios per user
+
+📝 Auto-suggestions for stock symbols
 
 
-Author:
+👨‍💻 Author
 
 Mayank Korde
 
@@ -94,17 +108,21 @@ GitHub: https://github.com/Mayank14-03
 LinkedIn: https://www.linkedin.com/in/mayank-korde-386bb1317/
 
 
-License:
+📄 License
 
 This project is open-source and available under the MIT License.
 
 
+🏆 Badges
+
 ---
 
-⚡ Tip: After saving this as `README.md`, **commit and push** it to GitHub:  
-
-```powershell
-git add README.md
-git commit -m "Add professional README.md"
-git push
+### ✅ What to Do Next:
+1. Copy this into your `README.md`.  
+2. Create a `screenshots/` folder in your project → add images of your dashboard, forms, etc.  
+3. Commit & push:  
+   ```powershell
+   git add README.md
+   git commit -m "Update polished README with badges and screenshots"
+   git push
 
