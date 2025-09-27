@@ -72,17 +72,22 @@ body, html {
 }
 .btn-toggle:hover { background: var(--primary-hover); }
 
-/* ========= Dashboard Header ========= */
-.dashboard-header {
+/* ========= Dashboard Header Card ========= */
+.dashboard-header-card {
+    background: var(--card-bg);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-.dashboard-header h1 {
+.dashboard-header-card h1 {
+    font-size: 2.2rem;  /* bigger font for username */
+    margin: 0 0 10px 0;
+}
+.dashboard-header-card p {
+    font-size: 1.3rem;  /* slightly bigger subtitle */
     margin: 0;
-    font-size: 1.8rem;
-}
-.dashboard-header p {
-    margin: 5px 0;
     color: var(--text-color);
 }
 
@@ -138,6 +143,16 @@ body, html {
 .profit { color: var(--profit); }
 .loss { color: var(--loss); }
 
+/* ========= Chart ========= */
+.chart-card {
+    max-width: 500px;  /* limit chart width */
+    margin: 0 auto 30px; /* center and spacing */
+}
+.responsive-chart {
+    width: 100% !important;
+    height: 400px !important;
+}
+
 /* ========= Table ========= */
 .holdings-section {
     background: var(--card-bg);
@@ -182,15 +197,6 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
 .login-page       { background-image: url("../images/login-bg.jpg"); }
 .register-page    { background-image: url("../images/register-bg.jpg"); }
 .add-holding-page { background-image: url("../images/add-holding-bg.jpg"); }
-
-/* ========= Edit Holding Page ========= */
-.edit-holding-page {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* optional background image:
-       background-image: url("../images/edit-holding-bg.jpg"); */
-}
 
 .form-container {
     max-width: 400px;
@@ -267,12 +273,6 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     transform: scale(1.02);
 }
-.form-container a {
-    color: var(--primary);
-}
-.form-container a:hover {
-    text-decoration: underline;
-}
 
 /* ========= Messages ========= */
 .messages {
@@ -297,27 +297,6 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     border: 1px solid #b71c1c;
 }
 
-/* ========= Extra Links ========= */
-.extra-links {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
-}
-.extra-links a {
-    color: #007bff;
-    text-decoration: none;
-}
-.extra-links a:hover { text-decoration: underline; }
-
-/* ========= Chart ========= */
-.chart-card img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px auto 0;
-    display: block;
-    border-radius: 6px;
-}
-
 /* ========= Responsive ========= */
 @media (max-width: 992px) {
     .cards-container { flex-direction: column; gap: 15px; }
@@ -333,30 +312,28 @@ tbody tr:hover { background: rgba(0,0,0,0.07); transition: 0.2s; }
     .card .value { font-size: 1rem; }
     th, td { padding: 5px; font-size: 0.75rem; }
     .navbar { flex-direction: column; align-items: flex-start; gap: 10px; }
-    .dashboard-header h1 { font-size: 1.3rem; }
-    .dashboard-header p { font-size: 0.9rem; }
+    .dashboard-header-card h1 { font-size: 1.8rem; }
+    .dashboard-header-card p { font-size: 1.1rem; }
     .form-container { padding: 20px; margin: 15px; }
     .form-container h2 { font-size: 1.5rem; }
 }
 
-/* ========= Edit holding page layout =========
-   Keep navbar at the top and center the form
-   inside <main>. */
+/* ========= Edit holding page layout ========= */
 body.edit-holding-page {
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* navbar on top, main below */
+  flex-direction: column;
   margin: 0;
   background-image: url("../images/edit-holding-bg.jpg");
-  background-size: cover;        /* full screen cover */
-  background-position: center;   /* keep it centered */
-  background-repeat: no-repeat;  /* no tiling */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 body.edit-holding-page main {
   flex: 1;
   display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 nav.navbar { width: 100%; box-sizing: border-box; }

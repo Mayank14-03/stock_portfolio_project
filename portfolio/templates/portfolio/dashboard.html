@@ -2,7 +2,7 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-<div class="dashboard-header">
+<div class="dashboard-header-card">
     <h1>Welcome, {{ user.username }}</h1>
     <p>Your Portfolio Overview</p>
 </div>
@@ -35,14 +35,10 @@
     </div>
 </div>
 
-<!-- Portfolio Trend Chart -->
+<!-- Portfolio Pie Chart -->
 <div class="card chart-card">
     <h3>📈 Portfolio Trend</h3>
-    {% if chart %}
-        <img src="data:image/png;base64,{{ chart }}" alt="Portfolio Chart" class="responsive-chart">
-    {% else %}
-        <p>No data to display chart yet.</p>
-    {% endif %}
+    <canvas id="portfolioChart" class="responsive-chart"></canvas>
 </div>
 
 <!-- Holdings Table -->
@@ -89,6 +85,39 @@
         </table>
     </div>
 </div>
+
+<!-- ===== Add Chart.js ===== -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Build data from Django context
+    const labels = [{% for h in holdings %}'{{ h.stock_symbol }}'{% if not forloop.last %},{% endif %}{% endfor %}];
+    const values = [{% for h in holdings %}{{ h.current_price|floatformat:2 }}{% if not forloop.last %},{% endif %}{% endfor %}];
+
+    // Choose legend color based on current theme
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const legendColor = isDark ? "#ffffff" : "#000000";
+
+    new Chart(document.getElementById('portfolioChart'), {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values,
+                backgroundColor: ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f','#edc948']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: { color: legendColor }
+                }
+            }
+        }
+    });
+});
+</script>
 {% endblock %}
 
 
