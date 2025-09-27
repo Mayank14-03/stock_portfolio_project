@@ -47,31 +47,26 @@ A Django-based web application to track your stock portfolio with real-time pric
 
 1. Clone the repository:
 
-```bash
-(https://github.com/Mayank14-03/stock_portfolio_tracker_project.git)
-Go into the project folder:
+git clone https://github.com/Mayank14-03/stock_portfolio_project.git
 
-bash
-Copy code
-cd stock_portfolio_tracker_project
-Create and activate a virtual environment:
+2. Go into the project folder:
 
-bash
-Copy code
+cd stock_portfolio_project
+
+3. Create and activate a virtual environment:
+
 python -m venv venv
 # Windows
 venv\Scripts\activate
 # Mac/Linux
 source venv/bin/activate
-Install requirements:
 
-bash
-Copy code
+4. Install requirements:
+
 pip install -r requirements.txt
-Configure MySQL database in settings.py:
 
-python
-Copy code
+5. Configure MySQL database in settings.py:
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -82,31 +77,37 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-Apply migrations:
 
-bash
-Copy code
+
+6. Apply migrations:
+
 python manage.py migrate
-Create a superuser:
 
-bash
-Copy code
+
+7. Create a superuser:
+
 python manage.py createsuperuser
-Run the development server:
 
-bash
-Copy code
+8. Run the development server:
+
 python manage.py runserver
-Open in browser at http://127.0.0.1:8000/
 
-Notes
+9. Open in browser:
+http://127.0.0.1:8000/
+
+
+Notes:
+
 Screenshots folder: Create a folder named /stock_portfolio/screenshots/ in your repo and add the images there.
 
 .gitignore: Make sure to exclude venv/, __pycache__/, .env, and other local files.
 
-Repo name: If you want, rename your GitHub repository to match your project folder for consistency.
+Repo name: For consistency, rename your GitHub repository to match your project folder (stock_portfolio_project).
 
-Author
+Author:
+
 Mayank Korde
 GitHub | LinkedIn
+
+
 
