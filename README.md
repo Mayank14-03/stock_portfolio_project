@@ -1,4 +1,4 @@
-# Stock Portfolio Tracker Project
+# Stock Portfolio Project
 
 A Django-based web application to track your stock portfolio with real-time prices, portfolio charts, and Excel export. Fully mobile responsive and supports dark/light mode.
 
